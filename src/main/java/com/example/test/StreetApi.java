@@ -17,10 +17,6 @@ public class StreetApi {
         return streetService.findAll(page, limit);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/get-all")
-    public List<Street> getList() {
-        return streetService.getAll();
-    }
 
     @RequestMapping(method = RequestMethod.POST)
     public Street save(@RequestBody Street street) {

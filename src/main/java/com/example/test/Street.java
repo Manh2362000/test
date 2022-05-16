@@ -2,6 +2,7 @@ package com.example.test;
 
 import lombok.*;
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -22,4 +23,7 @@ public class Street {
     @JoinColumn(name = "districtId",insertable = false,updatable = false)
     private District district;
     private StreetEnum status;
+        @OneToMany(mappedBy = "district", cascade = CascadeType.ALL)
+    private Set<StreetDetail> streetDetailSet;
+
 }
